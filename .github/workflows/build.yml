@@ -9,10 +9,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Show repository files
-        run: ls -la
+      - name: Build mod
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          configure: -DGEODE_MOD_PATH=Predictive-Input-Buffer-2.208
 
 
